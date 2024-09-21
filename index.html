@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dithering Tool - Apply Dithering Effects to Images</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    
+    <!-- SEO and Open Graph Meta Tags -->
+    <meta name="description" content="Use this Dithering Tool to apply various dithering effects to your images. Choose from multiple algorithms and adjust settings to achieve the desired effect. Perfect for artists and designers.">
+    <meta name="keywords" content="dithering tool, image processing, art, design, algorithms, floyd-steinberg, atkinson, ordered, bayer, sierra">
+    <meta property="og:title" content="Dithering Tool - Apply Dithering Effects to Images">
+    <meta property="og:description" content="Use this Dithering Tool to apply various dithering effects to your images. Choose from multiple algorithms and adjust settings to achieve the desired effect. Perfect for artists and designers.">
+    <meta property="og:image" content="https://renderartist.com/tools/dithering-tool/dithering-tool-image.jpg">
+    <meta property="og:url" content="https://renderartist.com/tools/dithering-tool/index.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dithering Tool - Apply Dithering Effects to Images">
+    <meta name="twitter:description" content="Use this Dithering Tool to apply various dithering effects to your images. Choose from multiple algorithms and adjust settings to achieve the desired effect. Perfect for artists and designers.">
+    <meta name="twitter:image" content="https://renderartist.com/tools/dithering-tool/dithering-tool-image.jpg">
+    <meta name="twitter:url" content="https://renderartist.com/tools/dithering-tool/index.html">
+</head>
+<body>
+    <div class="container">
+        <aside id="controls">
+            <h1>Dithering Tool</h1>
+            <div class="input-group">
+                <label for="imageInput" class="custom-file-upload">
+                    <span>Choose Image</span>
+                </label>
+                <input type="file" id="imageInput" accept="image/*">
+            </div>
+            <div class="input-group">
+                <label for="ditheringAlgorithm">Algorithm</label>
+                <select id="ditheringAlgorithm">
+                    <option value="floydSteinberg">Floyd-Steinberg</option>
+                    <option value="atkinson">Atkinson</option>
+                    <option value="ordered">Ordered</option>
+                    <option value="bayer">Bayer</option>
+                    <option value="sierra">Sierra</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="contrast">Contrast: <span id="contrastValue">1</span></label>
+                <input type="range" id="contrast" min="0" max="2" step="0.1" value="1">
+            </div>
+            <div class="input-group">
+                <label for="threshold">Threshold: <span id="thresholdValue">128</span></label>
+                <input type="range" id="threshold" min="0" max="255" step="1" value="128">
+            </div>
+            <div class="input-group">
+                <label for="scale">Effect Scale: <span id="scaleValue">1</span></label>
+                <input type="range" id="scale" min="1" max="10" step="1" value="2">
+            </div>
+            <div class="button-group">
+                <button id="exportButton">Export Image</button>
+                <button id="resetButton">Reset</button>
+            </div>
+            <div class="credit">
+                <a href="https://renderartist.com" target="_blank">Made by <span>Render Artist</span></a>
+            </div>
+        </aside>
+        <main id="canvasContainer"></main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
